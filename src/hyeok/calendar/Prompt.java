@@ -8,7 +8,7 @@ public class Prompt {
 	 * 
 	 * 
 	 * @parma week 요일명
-	 * @retrun 0 ~ 6 (0 = Sunday,6 = Saturday )
+	 * @return 0 ~ 6 (0 = Sunday,6 = Saturday )
 	 * */
 	
 	public int parseDay(String week) {
@@ -29,7 +29,6 @@ public class Prompt {
 
 		int month = 1;
 		int year = 2017;
-		int weekday = 0;
 
 		while (true) {
 			System.out.println("연도를 입력하세요. (exit: -1)");
@@ -41,15 +40,12 @@ public class Prompt {
 			System.out.println("달을 입력하세요.");
 			System.out.print("MONTH> ");
 			month = scanner.nextInt();
-			System.out.println("첫째 날의 요일을 입력하세요(su, mo, tu, we, th, fr, sa).");
-			String str_weekday = scanner.next();
-			weekday = parseDay(str_weekday);
 
 			if (month > 12 || month < 1) {
 				System.out.println("잘못된 입력입니다.");
 				continue;
 			}
-			cal.printCalendar(year, month, weekday);
+			cal.printCalendar(year, month);
 		}
 
 		System.out.println("Bye~");
